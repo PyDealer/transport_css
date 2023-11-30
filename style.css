@@ -1,0 +1,65 @@
+.car {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(98, 0, 111);
+    position: absolute;
+    left: -200px;
+    transform: translateY(100%);
+    animation: drive 3s linear forwards;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+  }
+  .car-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    height: 100%;
+  }
+
+  .cabin {
+    width: 50px;
+    height: 65px;
+    background-color: rgb(98, 0, 111);
+    position: absolute;
+    top: 35px;
+    right: -50px;
+    border-bottom-right-radius: 10%;
+    border-top-right-radius: 10%;
+  }
+
+  .car::before,
+  .car::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+  }
+  
+  .car::before {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    left: 25px;
+  }
+  
+  .car::after {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    right: 25px;
+  }
+  
+  @keyframes drive {
+    0% {
+      left: -200px;
+    }
+    80% {
+      left: calc(100% - 350px);
+    }
+    100% {
+      left: calc(100% - 300px);
+    }
+  }
